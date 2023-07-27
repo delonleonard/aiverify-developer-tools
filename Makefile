@@ -19,8 +19,7 @@ setup-dev: # Setup dev environment 1. add __init__.py to work aiverify source co
 
 .PHONY: clean
 clean: # Clean up artefact
-	find . | grep -E "(__pycache__|\\.pyc|\\.pyo$)" | xargs rm -rf
-	find . | grep -E "(.pytest_cache|\\.pyc|\\.pyo$)" | xargs rm -rf
+	find . -type f -name "*.py[co]" -delete -o -type d -name "__pycache__" -delete -o -type d -name ".pytest_cache" -delete
 
 
 .PHONY: test-dev
