@@ -3,9 +3,11 @@ help: # Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
 .PHONY: clone-aiverify
-clone-aiverify: # Clone aioverify repo during steup
-	@git clone git@github.com:IMDA-BTG/aiverify.git aiverify
-	cd aiverify && git sparse-checkout init && git sparse-checkout set ai-verify-shared-library test-engine-core-modules test-engine-core
+clone-aiverify: # Clone aioverify repo during setup
+	@git clone git@github.com:delonleonard/aiverify.git && \
+	cd aiverify && \
+	git checkout plugin/grad-cam && \
+	git sparse-checkout init && git sparse-checkout set ai-verify-shared-library test-engine-core-modules test-engine-core
 
 .PHONY: docker-build
 docker-build: # Build docker image from docker/dev.Dockerfile
