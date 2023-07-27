@@ -95,7 +95,6 @@ class PluginTest:
             print("START PLUGIN TEST")
             print("=" * 20)
 
-            # Discover available core plugins
             PluginManager.discover(str(self._base_path / self._core_modules_path))
             print(f"[DETECTED_PLUGINS]: {PluginManager.get_printable_plugins()}")
 

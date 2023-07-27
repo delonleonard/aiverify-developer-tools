@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
     # ground_truth = "default"
     # model_type = ModelType.CLASSIFICATION
-    core_modules_path = ""
+    core_modules_path = "../../../aiverify/test-engine-core-modules"
     data_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
     model_path = "tests/user_defined_files/model/binary_classification_mock_credit_risk_sklearn.linear_model._logistic.LogisticRegression.sav"
     ground_truth_path = "tests/user_defined_files/data/pickle_pandas_mock_binary_classification_credit_risk_testing.sav"
